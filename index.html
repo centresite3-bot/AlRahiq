@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Centre Errahik | Médecine Esthétique & Thérapie Naturelle à Casablanca</title>
-  <meta name="description" content="Centre Errahik à Casablanca : médecine esthétique, laser, soins de peau, thérapie naturelle, hijama, traitement capillaire. Rendez-vous WhatsApp." />
-  <meta name="keywords" content="médecine esthétique Casablanca, thérapie naturelle, laser épilation, soins peau, hijama Maroc, traitement cheveux" />
+  <title>Centre Errahik | Médecine naturelle & Thérapie naturelle à Casablanca</title>
+  <meta name="description" content="Centre Errahik à Casablanca : médecine naturelle, laser, soins de peau, thérapie naturelle, hijama, traitement capillaire. Rendez-vous WhatsApp." />
+  <meta name="keywords" content="médecine naturelle Casablanca, thérapie naturelle, laser épilation, soins peau, hijama Maroc, traitement cheveux" />
   <meta name="author" content="Centre Errahik" />
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://centrealrahiq.ma/" />
-  <meta property="og:title" content="Centre Errahik | Médecine Esthétique & Thérapie Naturelle" />
-  <meta property="og:description" content="Centre spécialisé en médecine esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
+  <meta property="og:title" content="Centre Errahik | Médecine naturelle & Thérapie naturelle" />
+  <meta property="og:description" content="Centre spécialisé en esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
   <meta property="og:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://centrealrahiq.ma/" />
-  <meta property="twitter:title" content="Centre Errahik | Médecine Esthétique & Thérapie Naturelle" />
-  <meta property="twitter:description" content="Centre spécialisé en médecine esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
+  <meta property="twitter:title" content="Centre Errahik | Médecine naturelle & Thérapie naturelle" />
+  <meta property="twitter:description" content="Centre spécialisé en esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
   <meta property="twitter:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
 
   <!-- Structured Data for Local Business -->
@@ -29,7 +29,7 @@
     "@context": "https://schema.org",
     "@type": "MedicalBusiness",
     "name": "Centre Errahik",
-    "description": "Centre spécialisé en médecine esthétique, laser, soins de peau et thérapies naturelles",
+    "description": "Centre spécialisé en médecine naturelle, laser, soins de peau et thérapies naturelles",
     "url": "https://centrealrahiq.ma/",
     "telephone": "+212 6 01 63 33 30",
     "email": "centreerrahik@gmail.com",
@@ -54,13 +54,12 @@
     ],
     "medicalSpecialty": [
       "Dermatology",
-      "Aesthetic Medicine",
       "Natural Medicine"
     ],
     "availableService": [
       {
         "@type": "MedicalProcedure",
-        "name": "Médecine Esthétique"
+        "name": "Médecine naturelle"
       },
       {
         "@type": "MedicalProcedure",
@@ -142,6 +141,15 @@
       margin-bottom: 0.5rem;
       font-size: 1.1rem;
     }
+
+    /* Animation for contact info */
+    @keyframes fadePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; } /* Fades to 20% visibility instead of completely invisible for better readability */
+    }
+    .power-fade {
+      animation: fadePulse 2s infinite ease-in-out;
+    }
   </style>
 </head>
 
@@ -156,7 +164,7 @@
         />
         <span class="brand__text">
           <strong data-i18n="brand_name">Centre Errahik</strong>
-          <small data-i18n="brand_tagline">Médecine esthétique & Thérapie naturelle</small>
+          <small data-i18n="brand_tagline">Médecine naturelle & Thérapie naturelle</small>
         </span>
       </a>
 
@@ -212,14 +220,41 @@
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
           </svg>
           <br/>
-          <span class="muted" data-i18n="hero_title_line2">Médecine esthétique & Thérapie naturelle</span>
+          <span class="muted" data-i18n="hero_title_line2">Médecine naturelle & Thérapie naturelle</span>
         </h1>
 
         <p class="hero-new__subtitle" data-i18n="hero_subtitle">
-          Soins esthétiques, laser, thérapies naturelles pour votre bien-être.
+          Soins naturels, laser, thérapies naturelles pour votre bien-être.
         </p>
 
+        
+        <div class="hero-contact-cards" aria-label="Contact rapide">
+          <a class="hero-contact-card" href="tel:+212601633330" aria-label="Appeler le Centre Errahik">
+            <span class="hero-contact-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <span class="hero-contact-card__label">Téléphone</span>
+            <span class="hero-contact-card__value power-fade">+212 601-633330</span>
+          </a>
+
+          <a class="hero-contact-card" href="mailto:centreerrahik@gmail.com" aria-label="Envoyer un email au Centre Errahik">
+            <span class="hero-contact-card__icon hero-contact-card__icon--alt" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <span class="hero-contact-card__label">Email</span>
+            <span class="hero-contact-card__value power-fade">centreerrahik@gmail.com</span>
+          </a>
+        </div>
+
         <div class="hero-new__cta">
+
           <a class="btn btn--primary btn--lg" id="whatsappHero" href="#" target="_blank" rel="noopener">
             <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
             <span data-i18n="hero_cta">Prendre rendez-vous sur WhatsApp</span>
@@ -235,6 +270,14 @@
             <span data-i18n="hero_secondary">Découvrir nos services</span>
           </a>
         </div>
+
+        <div class="hero-pills" aria-label="Avantages rapides">
+          <div class="hero-pill">✅ Réponse rapide sur WhatsApp</div>
+          <div class="hero-pill">🕒 Rendez-vous flexible</div>
+          <div class="hero-pill">🧼 Hygiène & confidentialité</div>
+        </div>
+
+</div>
 
         <div style="display: flex; align-items: center; gap: 12px; margin-top: 2rem; margin-bottom: 1rem;">
           <div style="display: flex;">
@@ -272,11 +315,11 @@
       <div class="section__head">
         <h2 data-i18n="services_title">Nos services</h2>
         <p class="section__sub" data-i18n="services_sub">
-          Des soins esthétiques et thérapeutiques adaptés à vos besoins.
+          Des soins naturels et thérapeutiques adaptés à vos besoins.
         </p>
       </div>
 
-      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">🩺 Thérapies Naturelles & Médicales</h3>
+      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">🩺 Thérapies Naturelles</h3>
       <div class="grid" style="margin-bottom: 3rem;">
         <article class="service">
           <div class="service__icon">
@@ -307,9 +350,9 @@
             </svg>
           </div>
           <h3>Acupuncture & Douleur</h3>
-          <p>Médecine chinoise pour le rééquilibrage énergétique.</p>
+          <p>Pour le rééquilibrage énergétique.</p>
           <ul class="list">
-            <li>Acupuncture (médecine chinoise)</li>
+            <li>Acupuncture</li>
             <li>Traitement de la sciatique</li>
             <li>Gestion de la douleur</li>
           </ul>
@@ -345,7 +388,7 @@
         </article>
       </div>
 
-      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">💆‍♀️ Esthétique Médicale</h3>
+      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">💆‍♀️ Esthétique</h3>
       <div class="grid">
         <article class="service">
           <div class="service__icon">
@@ -356,7 +399,7 @@
           <h3>Visage & Peau</h3>
           <p>Soins de haute technologie pour le rajeunissement.</p>
           <ul class="list">
-            <li>Esthétique médicale avancée</li>
+            <li>Esthétique avancée</li>
             <li>HydraFacial & Microneedling</li>
             <li>Mésothérapie visage et corps</li>
           </ul>
@@ -455,7 +498,7 @@
       <div>
         <h2 data-i18n="about_title">À propos du centre</h2>
         <p data-i18n="about_p1">
-          Le Centre Errahik se distingue par son approche unique combinant l'innovation de la médecine esthétique et la sagesse des thérapies naturelles. Situé à Casablanca, notre établissement est dédié à l'excellence des soins, offrant des solutions sur mesure pour la peau, le corps et la santé capillaire.
+          Le Centre Errahik se distingue par son approche unique combinant l'innovation de l'esthétique et la sagesse des thérapies naturelles. Situé à Casablanca, notre établissement est dédié à l'excellence des soins, offrant des solutions sur mesure pour la peau, le corps et la santé capillaire.
         </p>
         <p data-i18n="about_p2">
           Notre mission est de vous accompagner vers votre meilleure version grâce à des protocoles rigoureux et des équipements de pointe. Que ce soit pour un traitement laser, une séance de Hijama thérapeutique ou des soins du visage avancés, nous garantissons une expérience sécurisée, professionnelle et centrée sur vos résultats.
@@ -623,7 +666,7 @@
           <div class="testimonial__stars">★★★★★</div>
           <p class="testimonial__quote" data-i18n="testimonial_1_text">"Excellent centre..."</p>
           <div class="testimonial__author" data-i18n="testimonial_1_name">Fatima Z.</div>
-          <div class="testimonial__service" data-i18n="testimonial_1_service">Médecine esthétique</div>
+          <div class="testimonial__service" data-i18n="testimonial_1_service">Esthétique</div>
         </div>
         <div class="testimonial">
           <div class="testimonial__stars">★★★★★</div>
@@ -675,6 +718,93 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL VIDEOS SECTION -->
+  <section id="real-videos" class="section fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="videos_title">Nos Vidéos Réelles</h2>
+        <p class="section__sub" data-i18n="videos_sub">Découvrez nos soins et résultats en vidéo.</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE" title="Video 1" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Traitement Laser</h3>
+            <p class="video-desc">Séance d'épilation laser définitive avec nos équipements modernes.</p>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE_2" title="Video 2" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Séance Hijama</h3>
+            <p class="video-desc">Déroulement d'une séance de thérapie par ventouses.</p>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE_3" title="Video 3" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Soin du Visage</h3>
+            <p class="video-desc">Hydrafacial et nettoyage profond de la peau.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL PHOTOS SECTION -->
+  <section id="real-photos" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="real_photos_title">Galerie Photos Réelles</h2>
+        <p class="section__sub" data-i18n="real_photos_sub">Des résultats authentiques pour chaque type de soin.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tout</button>
+        <button class="filter-btn" data-filter="before-after" data-i18n="filter_before_after">Avant / Après</button>
+        <button class="filter-btn" data-filter="laser" data-i18n="filter_laser">Laser</button>
+        <button class="filter-btn" data-filter="hijama" data-i18n="filter_hijama">Hijama</button>
+        <button class="filter-btn" data-filter="face" data-i18n="filter_face">Soin visage</button>
+      </div>
+
+      <div class="real-gallery">
+        <!-- Items with categories -->
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/604966388_122111624541094533_2612734990609535980_n.jpg" alt="Soin visage" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/603958089_122111624583094533_1343469687623812055_n.jpg" alt="Soin visage" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille%20avant.jpg" alt="Soin visage avant" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille%20apres.jpg" alt="Soin visage après" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille2%20avant.jpg" alt="Soin visage avant 2" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille2%20apres.jpg" alt="Soin visage après 2" loading="lazy">
+        </div>
+      </div>
+
+      <div class="trust-note">
+        <span data-i18n="trust_note">📸 Note : Ces photos sont réelles et partagées avec le consentement de nos patients.</span>
       </div>
     </div>
   </section>
@@ -787,7 +917,7 @@
               <label for="service" data-i18n="form_service_label">Service</label>
               <select id="service" name="service" required>
                 <option value="" selected disabled data-i18n="form_service_placeholder">Choisir un service</option>
-                <option value="Médecine esthétique" data-i18n="form_service_opt1">Médecine esthétique</option>
+                <option value="Esthétique" data-i18n="form_service_opt1">Esthétique</option>
                 <option value="Hijama / Thérapie naturelle" data-i18n="form_service_opt2">Hijama / Thérapie naturelle</option>
                 <option value="Laser & épilation" data-i18n="form_service_opt3">Laser & épilation</option>
                 <option value="Soins de la peau (kélf / taches)" data-i18n="form_service_opt4">Soins de la peau</option>
@@ -842,7 +972,7 @@
     <div class="container footer__inner">
       <div>
         <strong data-i18n="brand_name">Centre Errahik</strong>
-        <div class="muted" data-i18n="brand_tagline">Médecine esthétique & Thérapie naturelle</div>
+        <div class="muted" data-i18n="brand_tagline">Médecine naturelle & Thérapie naturelle</div>
         <nav class="footer__nav">
           <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
           <a href="conditions-utilisation.html" data-i18n="footer_terms">Conditions d'utilisation</a>
