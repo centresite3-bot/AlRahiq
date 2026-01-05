@@ -180,6 +180,12 @@ html[data-lang="ar"] .mobile-nav{right:auto; left:20px}
   box-shadow: none;
 }
 .btn--ghost:hover{background: rgba(255,255,255,.22)}
+.btn--black-clear{
+  background: transparent;
+  border-color: black;
+  color: black;
+}
+.btn--black-clear:hover{background: rgba(0,0,0,.05)}
 .btn--lg{padding:14px 20px; border-radius:20px; font-size:16px}
 .btn__icon{display:inline-flex; align-items:center}
 .w-100{width:100%}

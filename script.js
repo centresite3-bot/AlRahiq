@@ -289,12 +289,14 @@ const i18n = {
     hours_note: "يمكنك إضافة الأوقات هنا (مثال: الإثنين–السبت 10:00–19:00). حالياً تواصل معنا على واتساب لتأكيد الموعد.",
     mini_location: "📍 الموقع",
     mini_phone: "📞 واتساب",
+    mini_email: "📧 البريد الإلكتروني",
     about_cta: "احجز عبر واتساب",
 
     contact_title: "اتصل بنا",
     contact_sub: "تواصل معنا على واتساب واطّلع على موقع المركز.",
     contact_card_title: "معلومات التواصل",
     contact_whatsapp: "واتساب",
+    contact_email: "البريد الإلكتروني",
     contact_address: "العنوان",
     contact_map: "الخريطة",
     open_map: "فتح خرائط Google",
@@ -385,7 +387,7 @@ function wireLinks() {
   const wa = buildWhatsAppLink(currentLang);
   const ids = [
     "whatsappTop","whatsappHero","whatsappCard","whatsappCallout",
-    "whatsappAbout","whatsappLink","whatsappContact","fabWhatsapp"
+    "whatsappAbout","whatsappLink","fabWhatsapp"
   ];
   ids.forEach(id => {
     const el = document.getElementById(id);
