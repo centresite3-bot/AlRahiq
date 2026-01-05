@@ -150,6 +150,39 @@
     .power-fade {
       animation: fadePulse 2s infinite ease-in-out;
     }
+
+    /* Welcome Toast Animation */
+    .welcome-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+      transform: translateY(100px) scale(0.8);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    @keyframes floatToast {
+      0%, 100% { bottom: 30px; }
+      50% { bottom: 40px; }
+    }
+    .welcome-toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      animation: floatToast 4s ease-in-out infinite;
+    }
+    .welcome-toast:hover {
+      animation-play-state: paused;
+    }
+    .welcome-toast span:last-child {
+      transition: opacity 0.5s ease;
+    }
   </style>
 </head>
 
@@ -1004,6 +1037,36 @@
       </div>
     </div>
   </footer>
+
+  <!-- Welcome Popup -->
+  <div id="welcomeToast" class="welcome-toast">
+    <span style="font-size: 22px;">👋</span>
+    <span style="font-weight: 600; color: #333; font-family: 'Inter', sans-serif;">Bonjour et bienvenue !</span>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var toast = document.getElementById('welcomeToast');
+        if (toast) {
+          toast.classList.add('show');
+          
+          var messages = ["Bonjour et bienvenue !", "مرحباً بكم !"];
+          var i = 0;
+          var textSpan = toast.querySelector('span:last-child');
+
+          setInterval(function() {
+            i = (i + 1) % messages.length;
+            textSpan.style.opacity = 0;
+            setTimeout(function() {
+              textSpan.textContent = messages[i];
+              textSpan.style.opacity = 1;
+            }, 500);
+          }, 3500);
+        }
+      }, 1500);
+    });
+  </script>
 
   <script src="script.js" defer></script>
 </body>
