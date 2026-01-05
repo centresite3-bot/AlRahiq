@@ -90,6 +90,53 @@
   <link rel="icon" href="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg">
 
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Mobile Layout Fixes */
+    html, body {
+      overflow-x: hidden; /* Prevent horizontal scroll gaps */
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%; /* iOS Safari text size fix */
+    }
+    img, iframe, video {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Fix for 100vh issues on mobile (iOS Safari address bar) */
+    .hero-new {
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: auto !important;
+    }
+
+    /* Fix layout for Services section */
+    #services .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+    #services .service {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #services .service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    #services .service > div:last-child {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+  </style>
 </head>
 
 <body>
@@ -108,12 +155,14 @@
       </a>
 
       <nav class="nav">
+        <a href="#home" data-i18n="nav_home">Accueil</a>
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#about" data-i18n="nav_about">À propos</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
 
       <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="#home" data-i18n="nav_home">Accueil</a>
         <a href="#services" data-i18n="nav_services">Services</a>
         <a href="#about" data-i18n="nav_about">À propos</a>
         <a href="#testimonials" data-i18n="nav_testimonials">Témoignages</a>
@@ -124,7 +173,11 @@
 
       <div class="actions">
         <button class="navtoggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
-          <span></span><span></span><span></span>
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
         </button>
         <button class="lang" id="langToggle" type="button" aria-label="Changer la langue">
           <span id="langLabel">FR</span> / <span id="langAlt">AR</span>
@@ -142,13 +195,17 @@
     </div>
   </header>
 
-  <section class="hero-new">
+  <section class="hero-new" id="home">
     <div class="container">
       <div class="hero-new__content">
         <div class="badge" data-i18n="badge">Casablanca • Sbata</div>
 
         <h1 class="hero-new__title">
-          <span data-i18n="hero_title_line1">Centre Errahik</span><br/>
+          <span data-i18n="hero_title_line1">Centre Errahik</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#3b82f6" style="vertical-align: middle; margin-bottom: 6px;" title="Centre Vérifié">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <br/>
           <span class="muted" data-i18n="hero_title_line2">Médecine esthétique & Thérapie naturelle</span>
         </h1>
 
@@ -171,6 +228,19 @@
             </span>
             <span data-i18n="hero_secondary">Découvrir nos services</span>
           </a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 2rem; margin-bottom: 1rem;">
+          <div style="display: flex;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #f3f4f6; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👩</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #e5e7eb; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👨</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #d1d5db; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👩‍🦱</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #2563eb; color: white; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">+500</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 16px; letter-spacing: -2px;">★★★★★</div>
+            <span style="font-size: 14px; font-weight: 700; color: #374151;">+541 Clients Satisfaits</span>
+          </div>
         </div>
 
         <div class="trust">
@@ -211,6 +281,13 @@
             <li>Thérapie par ventouses</li>
             <li>Détoxification de l’organisme</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Hijama%20et%20D%C3%A9tox" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Hijama%20et%20D%C3%A9tox" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
 
         <article class="service">
@@ -222,6 +299,13 @@
             <li>Traitement de la sciatique</li>
             <li>Gestion de la douleur</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Acupuncture" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Acupuncture" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
 
         <article class="service">
@@ -233,6 +317,13 @@
             <li>Traitement des spasmes</li>
             <li>Troubles musculo-squelettiques</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Muscles%20et%20Articulations" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Muscles%20et%20Articulations" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
       </div>
 
@@ -247,6 +338,13 @@
             <li>HydraFacial & Microneedling</li>
             <li>Mésothérapie visage et corps</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Visage%20et%20Peau" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Visage%20et%20Peau" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
 
         <article class="service">
@@ -258,6 +356,13 @@
             <li>Détatouage & Grains de beauté</li>
             <li>Cicatrices et vergetures</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Laser%20et%20Corrections" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Laser%20et%20Corrections" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
 
         <article class="service">
@@ -269,6 +374,13 @@
             <li>Lipolyse (fonte des graisses)</li>
             <li>Esthétique intime féminine</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Silhouette%20et%20Intime" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Silhouette%20et%20Intime" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
 
         <article class="service">
@@ -279,6 +391,13 @@
             <li>Traitement chute de cheveux</li>
             <li>Kératine capillaire</li>
           </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Cheveux" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Cheveux" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
         </article>
       </div>
 
@@ -302,11 +421,10 @@
       <div>
         <h2 data-i18n="about_title">À propos du centre</h2>
         <p data-i18n="about_p1">
-          Centre Errahik propose une approche qui réunit l’esthétique et la thérapie naturelle, pour accompagner
-          chaque personne avec sérieux et bienveillance.
+          Le Centre Errahik se distingue par son approche unique combinant l'innovation de la médecine esthétique et la sagesse des thérapies naturelles. Situé à Casablanca, notre établissement est dédié à l'excellence des soins, offrant des solutions sur mesure pour la peau, le corps et la santé capillaire.
         </p>
         <p data-i18n="about_p2">
-          Notre objectif : vous aider à améliorer votre bien-être, votre peau et votre confiance, grâce à des soins adaptés.
+          Notre mission est de vous accompagner vers votre meilleure version grâce à des protocoles rigoureux et des équipements de pointe. Que ce soit pour un traitement laser, une séance de Hijama thérapeutique ou des soins du visage avancés, nous garantissons une expérience sécurisée, professionnelle et centrée sur vos résultats.
         </p>
 
         <div class="features">
@@ -406,7 +524,44 @@
     </div>
   </section>
 
-    <section id="testimonials" class="section section--soft fade-in-up">
+  <section id="process" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="process_title">Votre Parcours Patient</h2>
+        <p class="section__sub" data-i18n="process_sub">
+          Une prise en charge médicale et esthétique structurée en 4 étapes pour votre satisfaction.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="feature-card">
+          <div class="feature-card__icon">📋</div>
+          <h3 data-i18n="process_1_title">1. Bilan & Diagnostic</h3>
+          <p data-i18n="process_1_desc">Consultation initiale pour analyser vos besoins (peau, santé) et définir les objectifs.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">📝</div>
+          <h3 data-i18n="process_2_title">2. Protocole Sur Mesure</h3>
+          <p data-i18n="process_2_desc">Proposition d'un plan de traitement personnalisé adapté à votre profil.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">✨</div>
+          <h3 data-i18n="process_3_title">3. Soin & Traitement</h3>
+          <p data-i18n="process_3_desc">Réalisation du soin avec des équipements modernes et une hygiène stricte.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">🤝</div>
+          <h3 data-i18n="process_4_title">4. Suivi & Résultats</h3>
+          <p data-i18n="process_4_desc">Accompagnement post-soin et conseils d'entretien pour des résultats durables.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section fade-in-up">
     <div class="container">
       <div class="section__head">
         <h2 data-i18n="testimonials_title">Témoignages</h2>
@@ -621,7 +776,7 @@
     </div>
   </section>
 
-  <a class="fab" id="fabWhatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a class="fab" id="fabWhatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" style="background-color: #25D366; color: #fff;">
     <span class="fab__icon">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
