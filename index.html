@@ -167,6 +167,7 @@
       transform: translateY(100px) scale(0.8);
       opacity: 0;
       transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
     }
     @keyframes floatToast {
       0%, 100% { bottom: 30px; }
@@ -198,6 +199,31 @@
     }
     .emoji-wave { animation: wave 1.2s infinite; transform-origin: 70% 70%; }
     .emoji-pulse { animation: pulse-emoji 1.5s infinite; }
+
+    /* Expanded Toast Styles */
+    .welcome-toast.expanded {
+      flex-direction: column;
+      padding: 24px;
+      border-radius: 24px;
+      align-items: stretch;
+      gap: 15px;
+      cursor: default;
+      animation: none;
+    }
+    .toast-options { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+    .toast-btn {
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      transition: transform 0.2s;
+      display: block;
+    }
+    .toast-btn:hover { transform: scale(1.02); }
+    .toast-btn.whatsapp { background: #25D366; color: white; }
+    .toast-btn.email { background: #f3f4f6; color: #333; }
   </style>
 </head>
 
@@ -1064,30 +1090,80 @@
       setTimeout(function() {
         var toast = document.getElementById('welcomeToast');
         if (toast) {
-          toast.classList.add('show');
+          var interval;
           
-          var messages = ["Bonjour et bienvenue !", "مرحباً بكم !"];
-          var emojis = [
-            { char: "👋", cls: "emoji-wave" },
-            { char: "😊", cls: "" },
-            { char: "😊", cls: "emoji-pulse" }
-          ];
-          var i = 0;
-          var textSpan = toast.querySelector('span:last-child');
-          var emojiSpan = toast.querySelector('span:first-child');
+          function initToast() {
+            toast.innerHTML = `
+              <span style="font-size: 22px;" class="emoji-wave">👋</span>
+              <span style="font-weight: 600; color: #333; font-family: 'Inter', sans-serif;">Bonjour et bienvenue !</span>
+            `;
+            toast.classList.remove('expanded');
+            
+            var messages = ["Bonjour et bienvenue !", "مرحباً بكم !"];
+            var emojis = [
+              { char: "👋", cls: "emoji-wave" },
+              { char: "😊", cls: "" },
+              { char: "😊", cls: "emoji-pulse" }
+            ];
+            var i = 0;
+            
+            if (interval) clearInterval(interval);
+            interval = setInterval(function() {
+              var textSpan = toast.querySelector('span:last-child');
+              var emojiSpan = toast.querySelector('span:first-child');
+              if (!textSpan || !emojiSpan) return;
+              
+              i++;
+              textSpan.style.opacity = 0;
+              emojiSpan.style.opacity = 0;
+              setTimeout(function() {
+                textSpan.textContent = messages[i % messages.length];
+                emojiSpan.textContent = emojis[i % emojis.length].char;
+                emojiSpan.className = emojis[i % emojis.length].cls;
+                textSpan.style.opacity = 1;
+                emojiSpan.style.opacity = 1;
+              }, 500);
+            }, 3500);
+          }
 
-          setInterval(function() {
-            i++;
-            textSpan.style.opacity = 0;
-            emojiSpan.style.opacity = 0;
-            setTimeout(function() {
-              textSpan.textContent = messages[i % messages.length];
-              emojiSpan.textContent = emojis[i % emojis.length].char;
-              emojiSpan.className = emojis[i % emojis.length].cls;
-              textSpan.style.opacity = 1;
-              emojiSpan.style.opacity = 1;
-            }, 500);
-          }, 3500);
+          initToast();
+          toast.classList.add('show');
+
+          // Interactive Click Handler
+          toast.addEventListener('click', function() {
+            if (this.classList.contains('expanded')) return;
+            if (interval) clearInterval(interval);
+            this.classList.add('expanded');
+            
+            var isAr = document.documentElement.getAttribute('data-lang') === 'ar';
+            var title = isAr ? "كيف يمكننا مساعدتك؟" : "Comment pouvons-nous vous aider ?";
+            var waText = isAr ? "تواصل معنا عبر واتساب" : "Contactez-nous sur WhatsApp";
+            var emailText = isAr ? "راسلنا عبر البريد الإلكتروني" : "Envoyez-nous un email";
+            
+            this.innerHTML = `
+              <div style="text-align: center; width: 100%;">
+                <p style="margin: 0 0 12px; font-weight: 600; color: #333;">${title}</p>
+                <div class="toast-options">
+                  <a href="https://wa.me/212601633330" target="_blank" class="toast-btn whatsapp">${waText}</a>
+                  <a href="mailto:centreerrahik@gmail.com" class="toast-btn email">${emailText}</a>
+                </div>
+              </div>
+            `;
+          });
+
+          // Hide toast when scrolling down
+          var scrollTimeout;
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 100 && toast.classList.contains('expanded')) {
+              toast.classList.remove('show');
+              
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(function() {
+                initToast();
+                toast.classList.add('show');
+              }, 3000);
+            }
+          });
         }
       }, 1500);
     });
