@@ -1,257 +1,42 @@
-<!doctype html>
-<html lang="fr" data-lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Conditions d'Utilisation - Centre Errahik</title>
-  <meta name="description" content="Conditions d'utilisation du Centre Errahik : règles et modalités d'utilisation de nos services à Casablanca." />
-  <meta name="keywords" content="conditions utilisation Centre Errahik, termes service Casablanca, médecine esthétique" />
-  <meta name="author" content="Centre Errahik" />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://centrealrahiq.ma/conditions-utilisation.html" />
-  <meta property="og:title" content="Conditions d'Utilisation - Centre Errahik" />
-  <meta property="og:description" content="Conditions d'utilisation du Centre Errahik : règles et modalités d'utilisation de nos services." />
-  <meta property="og:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://centrealrahiq.ma/conditions-utilisation.html" />
-  <meta property="twitter:title" content="Conditions d'Utilisation - Centre Errahik" />
-  <meta property="twitter:description" content="Conditions d'utilisation du Centre Errahik : règles et modalités d'utilisation de nos services." />
-  <meta property="twitter:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Favicon (logo) -->
-  <link rel="icon" href="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg">
-
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions d'Utilisation | Centre Errahik</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #333; background-color: #f9fafb; }
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; background: #fff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-top: 40px; margin-bottom: 40px; }
+    h1 { color: #111827; margin-bottom: 20px; }
+    h2 { color: #374151; margin-top: 30px; font-size: 1.25rem; }
+    p { margin-bottom: 15px; }
+    .btn-back { display: inline-block; margin-bottom: 20px; color: #3b82f6; text-decoration: none; font-weight: 600; }
+  </style>
 </head>
-
 <body>
-  <header class="topbar">
-    <div class="container topbar__inner">
-      <a class="brand" href="index.html" aria-label="Accueil">
-        <img
-          class="brand__logo"
-          src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg"
-          alt="Centre Errahik Logo"
-        />
-        <span class="brand__text">
-          <strong data-i18n="brand_name">Centre Errahik</strong>
-          <small data-i18n="brand_tagline">Médecine esthétique & Thérapie naturelle</small>
-        </span>
-      </a>
+  <div class="container">
+    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+    <h1>Conditions d'Utilisation</h1>
+    <p>Bienvenue sur le site web du Centre Errahik.</p>
 
-      <nav class="nav">
-        <a href="index.html#services" data-i18n="nav_services">Services</a>
-        <a href="index.html#about" data-i18n="nav_about">À propos</a>
-        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
-      </nav>
+    <h2>1. Objet</h2>
+    <p>Ce site a pour vocation de présenter les services de médecine esthétique et de thérapie naturelle proposés par le Centre Errahik à Casablanca.</p>
 
-      <div class="mobile-nav" id="mobileNav" hidden>
-        <a href="index.html#services" data-i18n="nav_services">Services</a>
-        <a href="index.html#about" data-i18n="nav_about">À propos</a>
-        <a href="index.html#testimonials" data-i18n="nav_testimonials">Témoignages</a>
-        <a href="index.html#gallery" data-i18n="nav_gallery">Galerie</a>
-        <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
-        <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
-      </div>
+    <h2>2. Informations Médicales</h2>
+    <p>Les informations fournies sur ce site sont à titre indicatif et ne remplacent en aucun cas une consultation médicale professionnelle. Chaque patient est unique et les résultats peuvent varier.</p>
 
-      <div class="actions">
-        <button class="navtoggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
-          <span></span><span></span><span></span>
-        </button>
-        <button class="lang" id="langToggle" type="button" aria-label="Changer la langue">
-          <span id="langLabel">FR</span> / <span id="langAlt">AR</span>
-        </button>
+    <h2>3. Rendez-vous</h2>
+    <p>La demande de rendez-vous via le formulaire ou WhatsApp ne vaut pas confirmation immédiate. Notre équipe vous confirmera le créneau selon les disponibilités.</p>
 
-        <a class="btn btn--primary" id="whatsappTop" href="https://wa.me/212601633330" target="_blank" rel="noopener">
-          <span class="btn__icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-            </svg>
-          </span>
-          <span data-i18n="cta_whatsapp">WhatsApp</span>
-        </a>
-      </div>
-    </div>
-  </header>
+    <h2>4. Propriété Intellectuelle</h2>
+    <p>Tous les contenus (textes, images, logos) présents sur ce site sont la propriété exclusive du Centre Errahik. Toute reproduction est interdite.</p>
 
-  <section class="section">
-    <div class="container">
-      <div class="section__head">
-        <h1>Conditions d'Utilisation</h1>
-        <p class="section__sub">
-          Dernière mise à jour : <span id="lastUpdated"></span>
-        </p>
-      </div>
+    <h2>5. Responsabilité</h2>
+    <p>Le Centre Errahik s'efforce de maintenir les informations à jour mais ne saurait être tenu responsable d'erreurs ou d'omissions.</p>
 
-      <div class="card">
-        <div class="privacy-content">
-          <h2>1. Acceptation des conditions</h2>
-          <p>
-            En accédant et en utilisant les services du Centre Errahik, vous acceptez d'être lié par les présentes conditions d'utilisation.
-            Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.
-          </p>
-
-          <h2>2. Description des services</h2>
-          <p>Le Centre Errahik propose les services suivants :</p>
-          <ul>
-            <li><strong>Médecine esthétique :</strong> consultations, traitements et soins esthétiques</li>
-            <li><strong>Thérapie naturelle :</strong> hijama, thérapies alternatives et naturelles</li>
-            <li><strong>Laser et épilation :</strong> traitements au laser et épilation professionnelle</li>
-            <li><strong>Soins de la peau :</strong> traitements pour les imperfections, pigmentation et soins dermatologiques</li>
-            <li><strong>Traitement capillaire :</strong> soins pour la chute de cheveux et santé du cuir chevelu</li>
-            <li><strong>Autres services :</strong> retrait de tatouages, cicatrices et autres procédures médicales</li>
-          </ul>
-
-          <h2>3. Conditions d'admission</h2>
-          <p>Pour bénéficier de nos services :</p>
-          <ul>
-            <li>Vous devez avoir au moins 18 ans ou être accompagné d'un tuteur légal</li>
-            <li>Fournir des informations médicales exactes et complètes</li>
-            <li>Respecter les recommandations médicales données</li>
-            <li>Être à jour de vos vaccinations si nécessaire</li>
-          </ul>
-
-          <h2>4. Rendez-vous et annulations</h2>
-          <p>
-            Les rendez-vous doivent être pris via WhatsApp ou directement au centre. Les conditions d'annulation sont les suivantes :
-          </p>
-          <ul>
-            <li><strong>Annulation 24h à l'avance :</strong> gratuite</li>
-            <li><strong>Annulation moins de 24h :</strong> frais d'annulation peuvent s'appliquer</li>
-            <li><strong>Non-présentation :</strong> le rendez-vous sera considéré comme honoré</li>
-          </ul>
-
-          <h2>5. Tarifs et paiement</h2>
-          <p>
-            Les tarifs sont communiqués lors de la consultation. Le paiement s'effectue :
-          </p>
-          <ul>
-            <li>En espèces ou par carte bancaire au centre</li>
-            <li>À la fin de chaque séance ou traitement</li>
-            <li>Selon les modalités convenues lors de la consultation</li>
-          </ul>
-
-          <h2>6. Responsabilités de l'utilisateur</h2>
-          <p>En utilisant nos services, vous vous engagez à :</p>
-          <ul>
-            <li>Fournir des informations exactes sur votre état de santé</li>
-            <li>Respecter les recommandations et protocoles de soins</li>
-            <li>Signaler immédiatement tout effet indésirable</li>
-            <li>Maintenir une hygiène personnelle appropriée</li>
-            <li>Respecter le personnel et les autres patients</li>
-          </ul>
-
-          <h2>7. Contre-indications et risques</h2>
-          <p>
-            Certains traitements peuvent présenter des contre-indications. Il est de votre responsabilité de signaler :
-          </p>
-          <ul>
-            <li>Grossesse ou allaitement</li>
-            <li>Maladies chroniques ou allergies</li>
-            <li>Traitements médicamenteux en cours</li>
-            <li>Interventions chirurgicales récentes</li>
-          </ul>
-          <p>
-            Le Centre Errahik décline toute responsabilité en cas de non-divulgation d'informations médicales importantes.
-          </p>
-
-          <h2>8. Confidentialité et données médicales</h2>
-          <p>
-            Toutes les informations médicales sont traitées conformément à notre politique de confidentialité et aux réglementations
-            marocaines sur la protection des données médicales. Vos données sont strictement confidentielles.
-          </p>
-
-          <h2>9. Limitation de responsabilité</h2>
-          <p>
-            Le Centre Errahik s'engage à fournir des soins de qualité, mais ne peut garantir des résultats spécifiques.
-            La responsabilité du centre est limitée aux dommages directs et prévisibles. Nous déclinons toute responsabilité
-            pour les dommages indirects ou consécutifs.
-          </p>
-
-          <h2>10. Réclamations et litiges</h2>
-          <p>
-            En cas de réclamation, contactez-nous d'abord pour trouver une solution amiable. Tout litige sera soumis
-            aux tribunaux compétents de Casablanca selon la législation marocaine.
-          </p>
-
-          <h2>11. Modifications des conditions</h2>
-          <p>
-            Le Centre Errahik se réserve le droit de modifier ces conditions d'utilisation à tout moment.
-            Les modifications seront communiquées via notre site web ou directement aux patients.
-          </p>
-
-          <h2>12. Contact et informations</h2>
-          <p>Pour toute question concernant ces conditions ou nos services :</p>
-          <ul>
-            <li><strong>Adresse :</strong> Bd 6 Novembre, Sbata, Casablanca, 20450</li>
-            <li><strong>WhatsApp :</strong> +212 6 01 63 33 30</li>
-            <li><strong>Téléphone :</strong> +212 6 01 63 33 30</li>
-            <li><strong>Horaires :</strong> Lundi au Samedi, 10h00 - 19h00</li>
-            <li><strong>E-mail :</strong> [votre-email@centrealrahiq.ma]</li>
-          </ul>
-
-          <p>
-            En utilisant nos services, vous reconnaissez avoir lu, compris et accepté ces conditions d'utilisation.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <strong data-i18n="brand_name">Centre Errahik</strong>
-        <div class="muted" data-i18n="brand_tagline">Médecine esthétique & Thérapie naturelle</div>
-        <nav class="footer__nav">
-          <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
-          <a href="conditions-utilisation.html" data-i18n="footer_terms">Conditions d'utilisation</a>
-          <a href="index.html#contact" data-i18n="footer_contact">Contact</a>
-        </nav>
-
-        <div class="footer__social">
-          <a href="https://www.facebook.com/profile.php?id=61582836005450&name=xhp_nt__fb__action__open_user&_rdr" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/centre_beauty_errahik/?fbclid=IwY2xjawPHP25leHRuA2FlbQIxMABicmlkETFHSXhvcDJJR0lySnN0RVVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHpqhVt5H2N1Mdhl8k9qOy0NmvPPDR6dA4sropaYDCPxtfIuTy-jsNjbGhWdf_aem_QJy_XRxN9YQBG1lmSRkBpw#" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-      <div class="muted">
-        <span data-i18n="footer_rights">©</span>
-        <span id="year"></span>
-        <span data-i18n="footer_city">Casablanca</span>
-      </div>
-    </div>
-  </footer>
-
-  <a class="fab" id="fabWhatsapp" href="https://wa.me/212601633330" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <span class="fab__icon">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
-      </svg>
-    </span>
-    <span class="fab__text" data-i18n="fab_text">WhatsApp</span>
-  </a>
-
-  <script src="script.js" defer></script>
-  <script>
-    // Set last updated date
-    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('fr-FR');
-  </script>
+    <h2>6. Droit Applicable</h2>
+    <p>Tout litige en relation avec l'utilisation du site est soumis au droit marocain.</p>
+  </div>
 </body>
 </html>
