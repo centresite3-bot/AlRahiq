@@ -183,6 +183,21 @@
     .welcome-toast span:last-child {
       transition: opacity 0.5s ease;
     }
+    .welcome-toast span:first-child {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: inline-block;
+    }
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-20deg); }
+      75% { transform: rotate(20deg); }
+    }
+    @keyframes pulse-emoji {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+    .emoji-wave { animation: wave 1.2s infinite; transform-origin: 70% 70%; }
+    .emoji-pulse { animation: pulse-emoji 1.5s infinite; }
   </style>
 </head>
 
@@ -1040,7 +1055,7 @@
 
   <!-- Welcome Popup -->
   <div id="welcomeToast" class="welcome-toast">
-    <span style="font-size: 22px;">👋</span>
+    <span style="font-size: 22px;" class="emoji-wave">👋</span>
     <span style="font-weight: 600; color: #333; font-family: 'Inter', sans-serif;">Bonjour et bienvenue !</span>
   </div>
 
@@ -1052,15 +1067,25 @@
           toast.classList.add('show');
           
           var messages = ["Bonjour et bienvenue !", "مرحباً بكم !"];
+          var emojis = [
+            { char: "👋", cls: "emoji-wave" },
+            { char: "😊", cls: "" },
+            { char: "😊", cls: "emoji-pulse" }
+          ];
           var i = 0;
           var textSpan = toast.querySelector('span:last-child');
+          var emojiSpan = toast.querySelector('span:first-child');
 
           setInterval(function() {
-            i = (i + 1) % messages.length;
+            i++;
             textSpan.style.opacity = 0;
+            emojiSpan.style.opacity = 0;
             setTimeout(function() {
-              textSpan.textContent = messages[i];
+              textSpan.textContent = messages[i % messages.length];
+              emojiSpan.textContent = emojis[i % emojis.length].char;
+              emojiSpan.className = emojis[i % emojis.length].cls;
               textSpan.style.opacity = 1;
+              emojiSpan.style.opacity = 1;
             }, 500);
           }, 3500);
         }
