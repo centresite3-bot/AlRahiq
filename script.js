@@ -654,3 +654,231 @@ function wireLinks() {
       promoImages[currentPromoIndex].classList.add('active');
     }, 5000); // Change every 5 seconds
   }
+
+  /* === Chatbot Logic === */
+  const CHAT_DATA = {
+    fr: {
+      welcome: "Bonjour ! 👋 Bienvenue au Centre Errahik.",
+      lang_select: "Veuillez choisir votre langue :",
+      intro: "Comment pouvons-nous vous aider aujourd'hui ?",
+      services: [
+        { label: "Soins Visage", val: "Soins Visage" },
+        { label: "Laser / Épilation", val: "Laser" },
+        { label: "Cheveux", val: "Cheveux" },
+        { label: "Thérapie / Hijama", val: "Thérapie" },
+        { label: "Aidez-moi à choisir", val: "help" }
+      ],
+      help_q: "Quel est votre souci principal ?",
+      help_options: [
+        { label: "Problème de peau (Acné, Taches)", val: "Soins Visage" },
+        { label: "Poils indésirables / Tatouage", val: "Laser" },
+        { label: "Chute de cheveux", val: "Cheveux" },
+        { label: "Douleurs / Stress", val: "Thérapie" }
+      ],
+      gender_q: "S'agit-il d'un soin pour Homme ou Femme ?",
+      genders: ["Femme", "Homme"],
+      problem_q: "Pouvez-vous préciser votre objectif ?",
+      problems: {
+        "Soins Visage": ["Traitement Acné", "Anti-âge", "Éclat / Hydratation", "Taches / Kélf"],
+        "Laser": ["Épilation Laser", "Détatouage", "Cicatrices"],
+        "Cheveux": ["Chute de cheveux", "Greffe", "Soins cuir chevelu"],
+        "Thérapie": ["Hijama", "Douleurs articulaires", "Relaxation"]
+      },
+      done: "C'est noté ✅ Voici les options pour continuer :",
+      cta: { wa: "WhatsApp", email: "Email", book: "Prendre RDV" }
+    },
+    ar: {
+      welcome: "مرحباً بكم في مركز الرحيق 👋",
+      lang_select: "يرجى اختيار اللغة للمتابعة :",
+      intro: "كيف يمكننا مساعدتكم اليوم؟",
+      services: [
+        { label: "علاج البشرة", val: "Soins Visage" },
+        { label: "ليزر / إزالة الشعر", val: "Laser" },
+        { label: "علاج الشعر", val: "Cheveux" },
+        { label: "علاج طبيعي / حجامة", val: "Thérapie" },
+        { label: "ساعدني في الاختيار", val: "help" }
+      ],
+      help_q: "ما هي المشكلة الرئيسية؟",
+      help_options: [
+        { label: "مشاكل البشرة (حب الشباب، الكلف)", val: "Soins Visage" },
+        { label: "شعر غير مرغوب فيه / وشم", val: "Laser" },
+        { label: "تساقط الشعر", val: "Cheveux" },
+        { label: "آلام / توتر", val: "Thérapie" }
+      ],
+      gender_q: "هل العلاج لرجال أم نساء؟",
+      genders: ["نساء", "رجال"],
+      problem_q: "ما هو هدفكم الرئيسي؟",
+      problems: {
+        "Soins Visage": ["علاج حب الشباب", "مكافحة الشيخوخة", "نضارة / ترطيب", "تصبغات / كلف"],
+        "Laser": ["إزالة الشعر", "إزالة الوشم", "ندبات"],
+        "Cheveux": ["تساقط الشعر", "زراعة", "علاج فروة الرأس"],
+        "Thérapie": ["حجامة", "آلام المفاصل", "استرخاء"]
+      },
+      done: "تم التسجيل ✅ إليكم خيارات التواصل :",
+      cta: { wa: "واتساب", email: "بريد إلكتروني", book: "حجز موعد" }
+    }
+  };
+
+  const chatbotToggle = document.getElementById('chatbotToggle');
+  const chatbotWindow = document.getElementById('chatbotWindow');
+  const chatbotRestart = document.getElementById('chatbotRestart');
+  const chatbotClose = document.getElementById('chatbotClose');
+  const chatbotBody = document.getElementById('chatbotBody');
+  let chatState = { lang: null, service: null, gender: null, problem: null };
+
+  function toggleChat(show) {
+    if (!chatbotWindow) return;
+    if (show) {
+      chatbotWindow.classList.add('show');
+      requestAnimationFrame(() => chatbotWindow.classList.add('animate'));
+      chatbotToggle.style.display = 'none';
+      if (chatbotBody.children.length === 0) initChatFlow();
+      localStorage.setItem('alrahiq_chat_seen', 'true');
+    } else {
+      chatbotWindow.classList.remove('animate');
+      setTimeout(() => {
+        chatbotWindow.classList.remove('show');
+        chatbotToggle.style.display = 'flex';
+      }, 300); // Match CSS transition duration
+    }
+  }
+
+  if (chatbotToggle && chatbotWindow) {
+    chatbotToggle.addEventListener('click', () => toggleChat(true));
+    if (chatbotClose) chatbotClose.addEventListener('click', () => toggleChat(false));
+    if (chatbotRestart) chatbotRestart.addEventListener('click', resetChat);
+    
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      if (chatbotWindow.classList.contains('show') && 
+          !chatbotWindow.contains(e.target) && 
+          e.target !== chatbotToggle && 
+          !chatbotToggle.contains(e.target)) {
+        toggleChat(false);
+      }
+    });
+
+    // Auto-open logic
+    setTimeout(() => {
+      toggleChat(true);
+    }, 2000);
+  }
+
+  function resetChat() {
+    localStorage.removeItem('alrahiq_chat_lang');
+    chatState = { lang: null, service: null, gender: null, problem: null };
+    chatbotBody.innerHTML = '';
+    initChatFlow();
+  }
+
+  function addMsg(html, type = 'bot') {
+    const div = document.createElement('div');
+    div.className = `chat-msg chat-msg--${type}`;
+    if (chatState.lang === 'ar') div.classList.add('rtl');
+    div.innerHTML = html;
+    chatbotBody.appendChild(div);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+  }
+
+  function addBtns(options, callback) {
+    const div = document.createElement('div');
+    div.className = 'chat-options';
+    options.forEach(opt => {
+      const btn = document.createElement('button'); btn.className = 'chat-btn';
+      btn.textContent = typeof opt === 'string' ? opt : opt.label;
+      btn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        div.remove();
+        addMsg(btn.textContent, 'user');
+        callback(opt);
+      };
+      div.appendChild(btn);
+    });
+    chatbotBody.appendChild(div);
+    chatbotBody.scrollTop = chatbotBody.scrollHeight;
+  }
+
+  function initChatFlow() {
+    const savedLang = localStorage.getItem('alrahiq_chat_lang');
+    if (savedLang && CHAT_DATA[savedLang]) {
+      chatState.lang = savedLang;
+      stepService();
+    } else {
+      addMsg("Bonjour / السلام عليكم<br>Veuillez choisir votre langue / يرجى اختيار اللغة");
+      addBtns([{label: "Français", val: "fr"}, {label: "العربية", val: "ar"}], (opt) => {
+        chatState.lang = opt.val;
+        localStorage.setItem('alrahiq_chat_lang', opt.val);
+        stepService();
+      });
+    }
+  }
+
+  function stepService() {
+    const T = CHAT_DATA[chatState.lang];
+    addMsg(T.intro);
+    addBtns(T.services, (opt) => {
+      if (opt.val === 'help') stepHelp();
+      else {
+        chatState.service = opt.val;
+        stepGender();
+      }
+    });
+  }
+
+  function stepHelp() {
+    const T = CHAT_DATA[chatState.lang];
+    addMsg(T.help_q);
+    addBtns(T.help_options, (opt) => {
+      chatState.service = opt.val;
+      stepGender();
+    });
+  }
+
+  function stepGender() {
+    const T = CHAT_DATA[chatState.lang];
+    addMsg(T.gender_q);
+    addBtns(T.genders, (opt) => {
+      chatState.gender = typeof opt === 'string' ? opt : opt.label;
+      stepProblem();
+    });
+  }
+
+  function stepProblem() {
+    const T = CHAT_DATA[chatState.lang];
+    const problems = T.problems[chatState.service] || T.problems["Thérapie"];
+    addMsg(T.problem_q);
+    addBtns(problems, (opt) => {
+      chatState.problem = opt;
+      stepFinal();
+    });
+  }
+
+  function stepFinal() {
+    const T = CHAT_DATA[chatState.lang];
+    addMsg(T.done);
+
+    const summary = `Service: ${chatState.service}, Genre: ${chatState.gender}, Problème: ${chatState.problem}`;
+    const waMsg = encodeURIComponent((chatState.lang === 'ar' ? "السلام عليكم، " : "Bonjour, ") + summary);
+    const waLink = `https://wa.me/212601633330?text=${waMsg}`;
+    const mailLink = `mailto:centreerrahik@gmail.com?subject=RDV&body=${summary}`;
+
+    const iconWa = `<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>`;
+    const iconMail = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`;
+    const iconCal = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>`;
+
+    const html = `
+      <div class="chat-actions">
+        <a href="${waLink}" target="_blank" class="chat-action chat-action--wa">
+          ${iconWa} <span>${T.cta.wa}</span>
+        </a>
+        <a href="${mailLink}" class="chat-action chat-action--email">
+          ${iconMail} <span>${T.cta.email}</span>
+        </a>
+        <a href="#contact" onclick="document.getElementById('chatbotClose').click()" class="chat-action chat-action--book">
+          ${iconCal} <span>${T.cta.book}</span>
+        </a>
+      </div>
+    `;
+    addMsg(html);
+  }

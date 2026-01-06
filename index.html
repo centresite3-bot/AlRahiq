@@ -1329,6 +1329,25 @@
     </div>
   </div>
 
+  <!-- Chatbot Widget -->
+  <div class="chatbot" id="chatbot">
+    <div class="chatbot__window" id="chatbotWindow">
+      <div class="chatbot__header">
+        <div class="chatbot__title">Assistant Centre Errahik</div>
+        <div class="chatbot__actions">
+          <button class="chatbot__restart" id="chatbotRestart" aria-label="Redémarrer" title="Redémarrer">↻</button>
+          <button class="chatbot__close" id="chatbotClose" aria-label="Fermer">✕</button>
+        </div>
+      </div>
+      <div class="chatbot__body" id="chatbotBody">
+        <!-- Messages will appear here -->
+      </div>
+    </div>
+    <button class="chatbot__toggle" id="chatbotToggle" aria-label="Ouvrir le chat">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>
+  </div>
+
   <script>
     // Load YouTube IFrame API
     var tag = document.createElement('script');
