@@ -130,6 +130,17 @@ const i18n = {
     mini_phone: "📞 WhatsApp",
     about_cta: "Réserver sur WhatsApp",
 
+    trust_title: "Confiance & Sécurité",
+    trust_sub: "Votre sécurité et votre confort sont notre priorité absolue.",
+    ts_1_title: "Hygiène & Stérilisation",
+    ts_1_desc: "Protocoles médicaux stricts et matériel stérile à usage unique.",
+    ts_2_title: "Expertise Professionnelle",
+    ts_2_desc: "Équipe qualifiée et formée aux meilleures pratiques de soin.",
+    ts_3_title: "Confidentialité Totale",
+    ts_3_desc: "Respect absolu de votre vie privée et de votre intimité.",
+    ts_4_title: "Approche Personnalisée",
+    ts_4_desc: "Chaque soin est adapté à vos besoins uniques.",
+
     contact_title: "Contact",
     contact_sub: "Contactez-nous par WhatsApp et trouvez facilement le centre.",
     contact_card_title: "Coordonnées",
@@ -291,6 +302,17 @@ const i18n = {
     mini_phone: "📞 واتساب",
     mini_email: "📧 البريد الإلكتروني",
     about_cta: "احجز عبر واتساب",
+
+    trust_title: "ثقة وأمان",
+    trust_sub: "سلامتكم وراحتكم هي أولويتنا القصوى.",
+    ts_1_title: "نظافة وتعقيم",
+    ts_1_desc: "بروتوكولات طبية صارمة ومعدات معقمة.",
+    ts_2_title: "خبرة مهنية",
+    ts_2_desc: "فريق مؤهل ومدرب على أفضل الممارسات.",
+    ts_3_title: "خصوصية تامة",
+    ts_3_desc: "احترام كامل لخصوصيتك وسرية معلوماتك.",
+    ts_4_title: "علاج مخصص",
+    ts_4_desc: "كل علاج مصمم خصيصاً لاحتياجاتك.",
 
     contact_title: "اتصل بنا",
     contact_sub: "تواصل معنا على واتساب واطّلع على موقع المركز.",
@@ -589,4 +611,46 @@ function wireLinks() {
       item.addEventListener('click', () => openLightbox(img.src, title));
       item.style.cursor = 'pointer';
     });
+  }
+
+  // Interactive Before/After Slider Logic
+  const sliders = document.querySelectorAll('.comparison-slider');
+  sliders.forEach(slider => {
+    const before = slider.querySelector('.img-layer.before');
+    const handle = slider.querySelector('.handle');
+    
+    if (!before || !handle) return;
+
+    const slide = (x) => {
+      const rect = slider.getBoundingClientRect();
+      let pos = x - rect.left;
+      if (pos < 0) pos = 0;
+      if (pos > rect.width) pos = rect.width;
+      
+      const percentage = (pos / rect.width) * 100;
+      before.style.width = `${percentage}%`;
+      handle.style.left = `${percentage}%`;
+    };
+
+    const onMove = (e) => {
+      if (e.type === 'mousemove' && e.buttons === 0) return;
+      const clientX = e.type.startsWith('touch') ? e.touches[0].clientX : e.clientX;
+      slide(clientX);
+    };
+
+    slider.addEventListener('mousedown', (e) => slide(e.clientX));
+    slider.addEventListener('mousemove', onMove);
+    slider.addEventListener('touchstart', (e) => slide(e.touches[0].clientX), { passive: true });
+    slider.addEventListener('touchmove', onMove, { passive: true });
+  });
+
+  // Promo Slider Logic
+  const promoImages = document.querySelectorAll('.promo-img');
+  if (promoImages.length > 0) {
+    let currentPromoIndex = 0;
+    setInterval(() => {
+      promoImages[currentPromoIndex].classList.remove('active');
+      currentPromoIndex = (currentPromoIndex + 1) % promoImages.length;
+      promoImages[currentPromoIndex].classList.add('active');
+    }, 5000); // Change every 5 seconds
   }
