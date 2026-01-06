@@ -1361,22 +1361,10 @@
         height: '0',
         width: '0',
         videoId: 'IQ3SaSf--8Q',
-        playerVars: { 'playsinline': 1, 'controls': 0, 'loop': 1, 'playlist': 'IQ3SaSf--8Q', 'autoplay': 1 },
+        playerVars: { 'playsinline': 1, 'controls': 0, 'loop': 1, 'playlist': 'IQ3SaSf--8Q', 'autoplay': 0 },
         events: {
           'onReady': function(e) { 
             document.getElementById('musicWidget').style.display = 'flex';
-            e.target.playVideo();
-
-            // Fallback: Try to play on first user interaction if blocked
-            function unlockAudio() {
-              if (e.target.getPlayerState() !== YT.PlayerState.PLAYING) {
-                e.target.playVideo();
-              }
-              document.removeEventListener('click', unlockAudio);
-              document.removeEventListener('touchstart', unlockAudio);
-            }
-            document.addEventListener('click', unlockAudio);
-            document.addEventListener('touchstart', unlockAudio);
           },
           'onStateChange': onPlayerStateChange
         }
