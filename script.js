@@ -44,7 +44,7 @@ if (navToggle && mobileNav){
 const i18n = {
   fr: {
     brand_name: "Centre Errahik",
-    brand_tagline: "Médecine naturelle & Thérapie naturelle",
+    brand_tagline: "Esthétique non-surgical & alternative médecine",
     nav_services: "Services",
     nav_about: "À propos",
     nav_contact: "Contact",
@@ -54,7 +54,7 @@ const i18n = {
     cta_whatsapp: "WhatsApp",
     badge: "Casablanca • Sbata",
     hero_title_line1: "Centre Errahik",
-    hero_title_line2: "Médecine naturelle & Thérapie naturelle",
+    hero_title_line2: "Esthétique non-surgical & alternative médecine",
     hero_subtitle: "Nous réunissons soins esthétiques, traitements de la peau, laser, et thérapies naturelles pour votre bien-être.",
     hero_cta: "Prendre rendez-vous sur WhatsApp",
     hero_secondary: "Découvrir nos services",
@@ -391,7 +391,7 @@ function setTextByLang(lang) {
 
   document.title = (lang === "ar")
     ? "مركز الرحيق | التجميل الطبي و العلاج الطبيعي"
-    : "Centre Errahik | Médecine Esthétique & Thérapie Naturelle";
+    : "Centre Errahik | Esthétique non-surgical & alternative médecine";
 }
 
 function buildWhatsAppLink(lang) {
