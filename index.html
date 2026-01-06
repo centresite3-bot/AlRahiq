@@ -1,0 +1,1174 @@
+<!doctype html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Centre Errahik | Médecine naturelle & Thérapie naturelle à Casablanca</title>
+  <meta name="description" content="Centre Errahik à Casablanca : médecine naturelle, laser, soins de peau, thérapie naturelle, hijama, traitement capillaire. Rendez-vous WhatsApp." />
+  <meta name="keywords" content="médecine naturelle Casablanca, thérapie naturelle, laser épilation, soins peau, hijama Maroc, traitement cheveux" />
+  <meta name="author" content="Centre Errahik" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://centrealrahiq.ma/" />
+  <meta property="og:title" content="Centre Errahik | Médecine naturelle & Thérapie naturelle" />
+  <meta property="og:description" content="Centre spécialisé en esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://centrealrahiq.ma/" />
+  <meta property="twitter:title" content="Centre Errahik | Médecine naturelle & Thérapie naturelle" />
+  <meta property="twitter:description" content="Centre spécialisé en esthétique, laser, soins de peau et thérapies naturelles à Casablanca, Maroc." />
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg" />
+
+  <!-- Structured Data for Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Centre Errahik",
+    "description": "Centre spécialisé en médecine naturelle, laser, soins de peau et thérapies naturelles",
+    "url": "https://centrealrahiq.ma/",
+    "telephone": "+212 6 01 63 33 30",
+    "email": "centreerrahik@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bd 6 Novembre",
+      "addressLocality": "Sbata",
+      "addressRegion": "Casablanca",
+      "postalCode": "20450",
+      "addressCountry": "MA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "33.5731",
+      "longitude": "-7.5898"
+    },
+    "openingHours": "Mo-Sa 10:00-19:00",
+    "priceRange": "$$",
+    "image": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg",
+    "sameAs": [
+      "https://wa.me/212601633330"
+    ],
+    "medicalSpecialty": [
+      "Dermatology",
+      "Natural Medicine"
+    ],
+    "availableService": [
+      {
+        "@type": "MedicalProcedure",
+        "name": "Médecine naturelle"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Thérapie Naturelle"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Laser & Épilation"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Traitements de la Peau"
+      },
+      {
+        "@type": "MedicalProcedure",
+        "name": "Traitement Chute de Cheveux"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (logo) -->
+  <link rel="icon" href="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg">
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Mobile Layout Fixes */
+    html, body {
+      overflow-x: hidden; /* Prevent horizontal scroll gaps */
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      -webkit-text-size-adjust: 100%; /* iOS Safari text size fix */
+    }
+    img, iframe, video {
+      max-width: 100%;
+      height: auto;
+    }
+    /* Fix for 100vh issues on mobile (iOS Safari address bar) */
+    .hero-new {
+      min-height: 100vh;
+      min-height: 100dvh;
+      height: auto !important;
+    }
+
+    /* Fix layout for Services section */
+    #services .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+    }
+    #services .service {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    #services .service:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    #services .service > div:last-child {
+      margin-top: auto;
+      padding-top: 1rem;
+    }
+    /* Testimonial Stars */
+    .testimonial__stars {
+      color: #F59E0B;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    /* Animation for contact info */
+    @keyframes fadePulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; } /* Fades to 20% visibility instead of completely invisible for better readability */
+    }
+    .power-fade {
+      animation: fadePulse 2s infinite ease-in-out;
+    }
+
+    /* Welcome Toast Animation */
+    .welcome-toast {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      background-color: #fff;
+      padding: 12px 24px;
+      border-radius: 50px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 9999;
+      transform: translateY(100px) scale(0.8);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      cursor: pointer;
+    }
+    @keyframes floatToast {
+      0%, 100% { bottom: 30px; }
+      50% { bottom: 40px; }
+    }
+    .welcome-toast.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+      animation: floatToast 4s ease-in-out infinite;
+    }
+    .welcome-toast:hover {
+      animation-play-state: paused;
+    }
+    .welcome-toast span:last-child {
+      transition: opacity 0.5s ease;
+    }
+    .welcome-toast span:first-child {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      display: inline-block;
+    }
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-20deg); }
+      75% { transform: rotate(20deg); }
+    }
+    @keyframes pulse-emoji {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+    .emoji-wave { animation: wave 1.2s infinite; transform-origin: 70% 70%; }
+    .emoji-pulse { animation: pulse-emoji 1.5s infinite; }
+
+    /* Expanded Toast Styles */
+    .welcome-toast.expanded {
+      flex-direction: column;
+      padding: 24px;
+      border-radius: 24px;
+      align-items: stretch;
+      gap: 15px;
+      cursor: default;
+      animation: none;
+    }
+    .toast-options { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+    .toast-btn {
+      padding: 12px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+      transition: transform 0.2s;
+      display: block;
+    }
+    .toast-btn:hover { transform: scale(1.02); }
+    .toast-btn.whatsapp { background: #25D366; color: white; }
+    .toast-btn.email { background: #f3f4f6; color: #333; }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <a class="brand" href="#home" aria-label="Accueil">
+        <img
+          class="brand__logo"
+          src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg"
+          alt="Centre Errahik Logo"
+        />
+        <span class="brand__text">
+          <strong data-i18n="brand_name">Centre Errahik</strong>
+          <small data-i18n="brand_tagline">Médecine naturelle & Thérapie naturelle</small>
+        </span>
+      </a>
+
+      <nav class="nav">
+        <a href="#home" data-i18n="nav_home">Accueil</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about">À propos</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="mobile-nav" id="mobileNav" hidden>
+        <a href="#home" data-i18n="nav_home">Accueil</a>
+        <a href="#services" data-i18n="nav_services">Services</a>
+        <a href="#about" data-i18n="nav_about">À propos</a>
+        <a href="#testimonials" data-i18n="nav_testimonials">Témoignages</a>
+        <a href="#gallery" data-i18n="nav_gallery">Galerie</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </div>
+
+      <div class="actions">
+        <button class="navtoggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+        <button class="lang" id="langToggle" type="button" aria-label="Changer la langue">
+          <span id="langLabel">FR</span> / <span id="langAlt">AR</span>
+        </button>
+
+        <a class="btn btn--primary" id="whatsappTop" href="#" target="_blank" rel="noopener">
+          <span class="btn__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+          </span>
+          <span data-i18n="cta_whatsapp">WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero-new" id="home">
+    <div class="container">
+      <div class="hero-new__content">
+        <div class="badge" data-i18n="badge">Casablanca • Sbata</div>
+
+        <h1 class="hero-new__title">
+          <span data-i18n="hero_title_line1">Centre Errahik</span>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="#3b82f6" style="vertical-align: middle; margin-bottom: 6px;" title="Centre Vérifié">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+          <br/>
+          <span class="muted" data-i18n="hero_title_line2">Médecine naturelle & Thérapie naturelle</span>
+        </h1>
+
+        <p class="hero-new__subtitle" data-i18n="hero_subtitle">
+          Soins naturels, laser, thérapies naturelles pour votre bien-être.
+        </p>
+
+        
+        <div class="hero-contact-cards" aria-label="Contact rapide">
+          <a class="hero-contact-card" href="tel:+212601633330" aria-label="Appeler le Centre Errahik">
+            <span class="hero-contact-card__icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
+            <span class="hero-contact-card__label">Téléphone</span>
+            <span class="hero-contact-card__value power-fade">+212 601-633330</span>
+          </a>
+
+          <a class="hero-contact-card" href="mailto:centreerrahik@gmail.com" aria-label="Envoyer un email au Centre Errahik">
+            <span class="hero-contact-card__icon hero-contact-card__icon--alt" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <span class="hero-contact-card__label">Email</span>
+            <span class="hero-contact-card__value power-fade">centreerrahik@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="hero-new__cta">
+
+          <a class="btn btn--primary btn--lg" id="whatsappHero" href="#" target="_blank" rel="noopener">
+            <span class="btn__icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+            <span data-i18n="hero_cta">Prendre rendez-vous sur WhatsApp</span>
+          </a>
+
+          <a class="btn btn--ghost btn--lg" href="#services">
+            <span class="btn__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m9 12 2 2 4-4"></path>
+              </svg>
+            </span>
+            <span data-i18n="hero_secondary">Découvrir nos services</span>
+          </a>
+        </div>
+
+        <div class="hero-pills" aria-label="Avantages rapides">
+          <div class="hero-pill">✅ Réponse rapide sur WhatsApp</div>
+          <div class="hero-pill">🕒 Rendez-vous flexible</div>
+          <div class="hero-pill">🧼 Hygiène & confidentialité</div>
+        </div>
+
+</div>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-top: 2rem; margin-bottom: 1rem;">
+          <div style="display: flex;">
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #f3f4f6; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👩</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #e5e7eb; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👨</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #d1d5db; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">👩‍🦱</div>
+            <div style="width: 38px; height: 38px; border-radius: 50%; background-color: #2563eb; color: white; border: 3px solid #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: bold; margin-left: -15px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">+500</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-start;">
+            <div style="color: #F59E0B; font-size: 16px; letter-spacing: -2px;">★★★★★</div>
+            <span style="font-size: 14px; font-weight: 700; color: #374151;">+541 Clients Satisfaits</span>
+          </div>
+        </div>
+
+        <div class="trust">
+          <div class="trust__item">
+            <strong data-i18n="trust_1_title">Accueil professionnel</strong>
+            <span data-i18n="trust_1_desc">Écoute, confidentialité, suivi</span>
+          </div>
+          <div class="trust__item">
+            <strong data-i18n="trust_2_title">Soins combinés</strong>
+            <span data-i18n="trust_2_desc">Esthétique + thérapie naturelle</span>
+          </div>
+          <div class="trust__item">
+            <strong data-i18n="trust_3_title">À Sbata</strong>
+            <span data-i18n="trust_3_desc">Bd 6 Novembre, Casablanca</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="services_title">Nos services</h2>
+        <p class="section__sub" data-i18n="services_sub">
+          Des soins naturels et thérapeutiques adaptés à vos besoins.
+        </p>
+      </div>
+
+      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">🩺 Thérapies Naturelles</h3>
+      <div class="grid" style="margin-bottom: 3rem;">
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path>
+            </svg>
+          </div>
+          <h3>Hijama & Détox</h3>
+          <p>Détoxification profonde et stimulation de l'immunité.</p>
+          <ul class="list">
+            <li>Hijama thérapeutique (Prophétique)</li>
+            <li>Thérapie par ventouses</li>
+            <li>Détoxification de l’organisme</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Hijama%20et%20D%C3%A9tox" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Hijama%20et%20D%C3%A9tox" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+          </div>
+          <h3>Acupuncture & Douleur</h3>
+          <p>Pour le rééquilibrage énergétique.</p>
+          <ul class="list">
+            <li>Acupuncture</li>
+            <li>Traitement de la sciatique</li>
+            <li>Gestion de la douleur</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Acupuncture" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Acupuncture" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+            </svg>
+          </div>
+          <h3>Muscles & Articulations</h3>
+          <p>Soulagement des douleurs et récupération physique.</p>
+          <ul class="list">
+            <li>Douleurs articulaires et musculaires</li>
+            <li>Traitement des spasmes</li>
+            <li>Troubles musculo-squelettiques</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Muscles%20et%20Articulations" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Muscles%20et%20Articulations" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+      </div>
+
+      <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: #333;">💆‍♀️ Esthétique</h3>
+      <div class="grid">
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"></path><path d="M12 6v12"></path><path d="M6 12h12"></path>
+            </svg>
+          </div>
+          <h3>Visage & Peau</h3>
+          <p>Soins de haute technologie pour le rajeunissement.</p>
+          <ul class="list">
+            <li>Esthétique avancée</li>
+            <li>HydraFacial & Microneedling</li>
+            <li>Mésothérapie visage et corps</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Visage%20et%20Peau" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Visage%20et%20Peau" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h3>Laser & Corrections</h3>
+          <p>Technologies laser pour une peau parfaite.</p>
+          <ul class="list">
+            <li>Épilation laser</li>
+            <li>Détatouage & Grains de beauté</li>
+            <li>Cicatrices et vergetures</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Laser%20et%20Corrections" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Laser%20et%20Corrections" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3>Silhouette & Intime</h3>
+          <p>Remodelage du corps et bien-être intime.</p>
+          <ul class="list">
+            <li>Amincissement et remodelage</li>
+            <li>Lipolyse (fonte des graisses)</li>
+            <li>Esthétique intime féminine</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Silhouette%20et%20Intime" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Silhouette%20et%20Intime" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+
+        <article class="service">
+          <div class="service__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#d946ef" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a5 5 0 0 1 5 5v10a5 5 0 0 1-10 0V7a5 5 0 0 1 5-5z"></path><path d="M8 22h8"></path>
+            </svg>
+          </div>
+          <h3>Cheveux</h3>
+          <p>Solutions pour la santé et la beauté du cheveu.</p>
+          <ul class="list">
+            <li>Traitement chute de cheveux</li>
+            <li>Kératine capillaire</li>
+          </ul>
+          <div style="margin-top: auto; display: flex; gap: 0.5rem;">
+            <a href="https://wa.me/212601633330?text=Bonjour,%20je%20souhaite%20r%C3%A9server%20pour%20Cheveux" target="_blank" class="btn btn--primary" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; background-color: #25D366; color: #fff; border: 1px solid #25D366;">
+              <span style="margin-right: 6px; display: flex; align-items: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg></span>
+              WhatsApp
+            </a>
+            <a href="mailto:centreerrahik@gmail.com?subject=R%C3%A9servation%20Cheveux" class="btn btn--black-clear" style="flex: 1; font-size: 0.8rem; padding: 0.5rem; justify-content: center; border: 1px solid #e5e7eb;">Email</a>
+          </div>
+        </article>
+      </div>
+
+      <div class="callout">
+        <div class="callout__text">
+          <h3 data-i18n="callout_title">Un message = une réponse rapide</h3>
+          <p data-i18n="callout_desc">Dites-nous votre besoin (laser, peau, cheveux, hijama…) et nous vous guidons.</p>
+        </div>
+        <a class="btn btn--primary" id="whatsappCallout" href="#" target="_blank" rel="noopener">
+          <span class="btn__icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/></svg>
+          </span>
+          <span data-i18n="callout_cta">Écrire sur WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section section--soft fade-in-up">
+    <div class="container about">
+      <div>
+        <h2 data-i18n="about_title">À propos du centre</h2>
+        <p data-i18n="about_p1">
+          Le Centre Errahik se distingue par son approche unique combinant l'innovation de l'esthétique et la sagesse des thérapies naturelles. Situé à Casablanca, notre établissement est dédié à l'excellence des soins, offrant des solutions sur mesure pour la peau, le corps et la santé capillaire.
+        </p>
+        <p data-i18n="about_p2">
+          Notre mission est de vous accompagner vers votre meilleure version grâce à des protocoles rigoureux et des équipements de pointe. Que ce soit pour un traitement laser, une séance de Hijama thérapeutique ou des soins du visage avancés, nous garantissons une expérience sécurisée, professionnelle et centrée sur vos résultats.
+        </p>
+
+        <div class="features">
+          <div class="feature">
+            <span class="feature__icon">✅</span>
+            <span data-i18n="f1">Approche personnalisée</span>
+          </div>
+          <div class="feature">
+            <span class="feature__icon">✅</span>
+            <span data-i18n="f2">Hygiène et confidentialité</span>
+          </div>
+          <div class="feature">
+            <span class="feature__icon">✅</span>
+            <span data-i18n="f3">Conseils et suivi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__card">
+        <div class="card">
+          <h3 class="card__title" data-i18n="hours_title">Horaires</h3>
+          <p class="card__note" data-i18n="hours_note">
+            Indiquez vos horaires ici (ex : Lun–Sam 10:00–19:00).
+            Pour l’instant, contactez-nous sur WhatsApp pour confirmer la disponibilité.
+          </p>
+
+          <div class="mini">
+            <div class="mini__row">
+              <span data-i18n="mini_location">📍 Localisation</span>
+              <span class="muted" data-i18n="addr_value">Bd 6 Novembre, Sbata, Casablanca, 20450</span>
+            </div>
+            <div class="mini__row">
+              <span data-i18n="mini_phone">📞 WhatsApp</span>
+              <span class="muted">+212 6 01 63 33 30</span>
+            </div>
+            <div class="mini__row">
+              <span data-i18n="mini_email">📧 Email</span>
+              <span class="muted">centreerrahik@gmail.com</span>
+            </div>
+          </div>
+
+          <a class="btn btn--primary w-100" id="whatsappAbout" href="#" target="_blank" rel="noopener">
+            <span class="btn__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+            </span>
+            <span data-i18n="about_cta">Réserver sur WhatsApp</span>
+          </a>
+          <a class="btn btn--black-clear w-100" href="mailto:centreerrahik@gmail.com" style="margin-top: 10px;">
+            <span class="btn__icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+            <span data-i18n="about_email_cta">Réserver sur Email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why-choose-us" class="section fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="why_title">Pourquoi nous choisir</h2>
+        <p class="section__sub" data-i18n="why_sub">
+          Des soins de qualité dans un environnement professionnel et bienveillant.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="why_1_title">Équipements modernes</h3>
+          <p data-i18n="why_1_desc">Technologies de pointe pour des résultats optimaux et sécurisés.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </div>
+          <h3 data-i18n="why_2_title">Équipe qualifiée</h3>
+          <p data-i18n="why_2_desc">Professionnels expérimentés avec une approche personnalisée.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
+          <h3 data-i18n="why_3_title">Hygiène & sécurité</h3>
+          <p data-i18n="why_3_desc">Protocoles stricts pour votre sécurité et votre confort.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <h3 data-i18n="why_4_title">Résultats garantis</h3>
+          <p data-i18n="why_4_desc">Suivi personnalisé et conseils pour maintenir vos résultats.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="process_title">Votre Parcours Patient</h2>
+        <p class="section__sub" data-i18n="process_sub">
+          Une prise en charge médicale et esthétique structurée en 4 étapes pour votre satisfaction.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="feature-card">
+          <div class="feature-card__icon">📋</div>
+          <h3 data-i18n="process_1_title">1. Bilan & Diagnostic</h3>
+          <p data-i18n="process_1_desc">Consultation initiale pour analyser vos besoins (peau, santé) et définir les objectifs.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">📝</div>
+          <h3 data-i18n="process_2_title">2. Protocole Sur Mesure</h3>
+          <p data-i18n="process_2_desc">Proposition d'un plan de traitement personnalisé adapté à votre profil.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">✨</div>
+          <h3 data-i18n="process_3_title">3. Soin & Traitement</h3>
+          <p data-i18n="process_3_desc">Réalisation du soin avec des équipements modernes et une hygiène stricte.</p>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-card__icon">🤝</div>
+          <h3 data-i18n="process_4_title">4. Suivi & Résultats</h3>
+          <p data-i18n="process_4_desc">Accompagnement post-soin et conseils d'entretien pour des résultats durables.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="testimonials_title">Témoignages</h2>
+        <p class="section__sub" data-i18n="testimonials_sub">Découvrez les expériences de nos patients satisfaits.</p>
+      </div>
+
+      <div class="testimonials">
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote" data-i18n="testimonial_1_text">"Excellent centre..."</p>
+          <div class="testimonial__author" data-i18n="testimonial_1_name">Fatima Z.</div>
+          <div class="testimonial__service" data-i18n="testimonial_1_service">Esthétique</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote" data-i18n="testimonial_2_text">"La hijama..."</p>
+          <div class="testimonial__author" data-i18n="testimonial_2_name">Ahmed M.</div>
+          <div class="testimonial__service" data-i18n="testimonial_2_service">Thérapie naturelle</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial__stars">★★★★★</div>
+          <p class="testimonial__quote" data-i18n="testimonial_3_text">"Traitement au laser..."</p>
+          <div class="testimonial__author" data-i18n="testimonial_3_name">Sara L.</div>
+          <div class="testimonial__service" data-i18n="testimonial_3_service">Laser & épilation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="before-after" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="before_after_title">Avant / Après</h2>
+        <p class="section__sub" data-i18n="before_after_sub">Résultats de nos traitements pour la peau et les imperfections.</p>
+      </div>
+
+      <div class="comparisons">
+        <div class="comparison">
+          <h3 class="comparison__title" data-i18n="comparison_1_title">Traitement anti-âge</h3>
+          <div class="comparison__images">
+            <div class="comparison__before">
+              <span class="comparison__label">Avant</span>
+              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant.jpg" alt="Avant traitement anti-âge" loading="lazy" />
+            </div>
+            <div class="comparison__after">
+              <span class="comparison__label">Après</span>
+              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres.jpg" alt="Après traitement anti-âge" loading="lazy" />
+            </div>
+          </div>
+        </div>
+        <div class="comparison">
+          <h3 class="comparison__title" data-i18n="comparison_2_title">Traitement peau</h3>
+          <div class="comparison__images">
+            <div class="comparison__before">
+              <span class="comparison__label">Avant</span>
+              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant%20peau.jpg" alt="Avant traitement peau" loading="lazy" />
+            </div>
+            <div class="comparison__after">
+              <span class="comparison__label">Après</span>
+              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres%20peau.jpg" alt="Après traitement peau" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL VIDEOS SECTION -->
+  <section id="real-videos" class="section fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="videos_title">Nos Vidéos Réelles</h2>
+        <p class="section__sub" data-i18n="videos_sub">Découvrez nos soins et résultats en vidéo.</p>
+      </div>
+
+      <div class="video-grid">
+        <!-- Video 1 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/cHaAsddHeuw?autoplay=1&mute=1" title="Retrait du tatouage" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Retrait du tatouage</h3>
+            <p class="video-desc">Séance d'épilation laser définitive avec nos équipements modernes.</p>
+          </div>
+        </div>
+        <!-- Video 2 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/VIDEO_ID_HERE_2" title="Video 2" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Séance Hijama</h3>
+            <p class="video-desc">Déroulement d'une séance de thérapie par ventouses.</p>
+          </div>
+        </div>
+        <!-- Video 3 -->
+        <div class="video-card">
+          <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/MXBIut1pvw8?autoplay=1&mute=1" title="Soin du Visage" allow="autoplay; encrypted-media" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-info">
+            <h3 class="video-title">Soin du Visage</h3>
+            <p class="video-desc">Hydrafacial et nettoyage profond de la peau.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL PHOTOS SECTION -->
+  <section id="real-photos" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="real_photos_title">Galerie Photos Réelles</h2>
+        <p class="section__sub" data-i18n="real_photos_sub">Des résultats authentiques pour chaque type de soin.</p>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Tout</button>
+        <button class="filter-btn" data-filter="before-after" data-i18n="filter_before_after">Avant / Après</button>
+        <button class="filter-btn" data-filter="laser" data-i18n="filter_laser">Laser</button>
+        <button class="filter-btn" data-filter="hijama" data-i18n="filter_hijama">Hijama</button>
+        <button class="filter-btn" data-filter="face" data-i18n="filter_face">Soin visage</button>
+      </div>
+
+      <div class="real-gallery">
+        <!-- Items with categories -->
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/604966388_122111624541094533_2612734990609535980_n.jpg" alt="Soin visage" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/603958089_122111624583094533_1343469687623812055_n.jpg" alt="Soin visage" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille%20avant.jpg" alt="Soin visage avant" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille%20apres.jpg" alt="Soin visage après" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille2%20avant.jpg" alt="Soin visage avant 2" loading="lazy">
+        </div>
+        <div class="real-photo-item" data-category="face">
+          <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/fille2%20apres.jpg" alt="Soin visage après 2" loading="lazy">
+        </div>
+      </div>
+
+      <div class="trust-note">
+        <span data-i18n="trust_note">📸 Note : Ces photos sont réelles et partagées avec le consentement de nos patients.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="gallery_title">Notre Centre</h2>
+        <p class="section__sub" data-i18n="gallery_sub">Découvrez notre espace moderne et accueillant dédié à votre bien-être.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery__item">
+          <img class="gallery__image" loading="lazy" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/Salle%20de%20consultation.jpg" alt="Salle de consultation" />
+          <figcaption class="gallery__overlay"><p class="gallery__title" data-i18n="gallery_1_title">Salle de consultation</p></figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img class="gallery__image" loading="lazy" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/%C3%89quipements%20laser.png" alt="Équipements laser" />
+          <figcaption class="gallery__overlay"><p class="gallery__title" data-i18n="gallery_2_title">Équipements laser</p></figcaption>
+        </figure>
+
+        <figure class="gallery__item">
+          <img class="gallery__image" loading="lazy" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/R%C3%A9ception.jpg" alt="Réception" />
+          <figcaption class="gallery__overlay"><p class="gallery__title" data-i18n="gallery_4_title">Réception</p></figcaption>
+        </figure>
+        <figure class="gallery__item">
+          <img class="gallery__image" loading="lazy" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/Zone%20de%20relaxation.jpg" alt="Zone de relaxation" />
+          <figcaption class="gallery__overlay"><p class="gallery__title" data-i18n="gallery_5_title">Zone de relaxation</p></figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section section--soft fade-in-up">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="faq_title">Questions fréquentes</h2>
+        <p class="section__sub" data-i18n="faq_sub">Réponses rapides avant votre visite.</p>
+      </div>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary data-i18n="faq_q1">Comment réserver un rendez-vous ?</summary>
+          <p data-i18n="faq_a1">Le plus rapide : envoyez un message WhatsApp. Indiquez votre nom + le service souhaité.</p>
+        </details>
+        <details class="faq__item">
+          <summary data-i18n="faq_q2">Faut-il une consultation avant le laser ?</summary>
+          <p data-i18n="faq_a2">Oui, un bilan permet de choisir le protocole adapté à votre peau et vos besoins.</p>
+        </details>
+        <details class="faq__item">
+          <summary data-i18n="faq_q3">Où se trouve le centre ?</summary>
+          <p data-i18n="faq_a3">Bd 6 Novembre, Sbata, Casablanca (20450). Vous pouvez ouvrir la carte Google Maps ci-dessous.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2 data-i18n="contact_title">Contact</h2>
+        <p class="section__sub" data-i18n="contact_sub">
+          Contactez-nous par WhatsApp et trouvez facilement le centre.
+        </p>
+      </div>
+
+      <div class="contact">
+        <div class="card">
+          <h3 class="card__title" data-i18n="contact_card_title">Coordonnées</h3>
+
+          <div class="contact__row">
+            <span class="pill" data-i18n="contact_whatsapp">WhatsApp</span>
+            <a class="link" id="whatsappLink" href="#" target="_blank" rel="noopener">+212601633330</a>
+          </div>
+
+          <div class="contact__row">
+            <span class="pill" data-i18n="contact_email">Email</span>
+            <a class="link" href="mailto:centreerrahik@gmail.com">centreerrahik@gmail.com</a>
+          </div>
+
+          <div class="contact__row">
+            <span class="pill" data-i18n="contact_address">Adresse</span>
+            <span class="text" data-i18n="addr_value">Bd 6 Novembre, Sbata, Casablanca, 20450</span>
+          </div>
+
+          <div class="contact__row">
+            <span class="pill" data-i18n="contact_map">Carte</span>
+            <a class="link" id="mapLink" href="#" target="_blank" rel="noopener" data-i18n="open_map">Ouvrir Google Maps</a>
+          </div>
+
+          <div class="card__divider"></div>
+
+          <p class="card__note" data-i18n="contact_note">
+            Astuce : Envoyez votre nom + le service souhaité (laser / peau / cheveux / hijama) pour une réponse plus rapide.
+          </p>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-group">
+              <label for="name" data-i18n="form_name_label">Nom</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Votre nom" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" data-i18n="form_phone_label">Téléphone</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+212..." />
+            </div>
+
+            <div class="form-group">
+              <label for="service" data-i18n="form_service_label">Service</label>
+              <select id="service" name="service" required>
+                <option value="" selected disabled data-i18n="form_service_placeholder">Choisir un service</option>
+                <option value="Esthétique" data-i18n="form_service_opt1">Esthétique</option>
+                <option value="Hijama / Thérapie naturelle" data-i18n="form_service_opt2">Hijama / Thérapie naturelle</option>
+                <option value="Laser & épilation" data-i18n="form_service_opt3">Laser & épilation</option>
+                <option value="Soins de la peau (kélf / taches)" data-i18n="form_service_opt4">Soins de la peau</option>
+                <option value="Chute de cheveux" data-i18n="form_service_opt5">Chute de cheveux</option>
+                <option value="Tatouage / Cicatrices" data-i18n="form_service_opt6">Tatouage / Cicatrices</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="form_message_label">Message</label>
+              <textarea id="message" name="message" rows="4" required placeholder="Expliquez votre besoin..."></textarea>
+            </div>
+
+            <button class="btn btn--primary w-100" type="submit" id="contactSubmit" data-i18n="form_submit">Envoyer sur WhatsApp</button>
+          </form>
+
+          <a class="btn btn--black-clear w-100" id="whatsappContact" href="mailto:centreerrahik@gmail.com" target="_blank" rel="noopener">
+            <span class="btn__icon" style="color: #c9a24d">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+            </span>
+            <span data-i18n="contact_cta">Envoyer un message</span>
+          </a>
+        </div>
+
+        <div class="map card">
+          <h3 class="card__title" data-i18n="map_title">Localisation</h3>
+          <div class="map__frame">
+            <iframe
+              title="Google Map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Bd%206%20Novembre%20,%20Sbata,%20Casablanca,%20Morocco,%2020450&output=embed">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="fab" id="fabWhatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp" style="background-color: #25D366; color: #fff;">
+    <span class="fab__icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+      </svg>
+    </span>
+    <span class="fab__text" data-i18n="fab_text">WhatsApp</span>
+  </a>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <strong data-i18n="brand_name">Centre Errahik</strong>
+        <div class="muted" data-i18n="brand_tagline">Médecine naturelle & Thérapie naturelle</div>
+        <nav class="footer__nav">
+          <a href="politique-confidentialite.html" data-i18n="footer_privacy">Politique de confidentialité</a>
+          <a href="conditions-utilisation.html" data-i18n="footer_terms">Conditions d'utilisation</a>
+          <a href="#contact" data-i18n="footer_contact">Contact</a>
+        </nav>
+
+        <div class="footer__social">
+          <a href="https://www.facebook.com/profile.php?id=61582836005450&name=xhp_nt__fb__action__open_user&_rdr" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/centre_beauty_errahik/?fbclid=IwY2xjawPHP25leHRuA2FlbQIxMABicmlkETFHSXhvcDJJR0lySnN0RVVrc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHpqhVt5H2N1Mdhl8k9qOy0NmvPPDR6dA4sropaYDCPxtfIuTy-jsNjbGhWdf_aem_QJy_XRxN9YQBG1lmSRkBpw#" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/channel/UCmt0WxJGsO8_xVEsKk0mO5Q" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="muted">
+        <span data-i18n="footer_rights">©</span>
+        <span id="year"></span>
+        <span data-i18n="footer_city">Casablanca</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Welcome Popup -->
+  <div id="welcomeToast" class="welcome-toast">
+    <span style="font-size: 22px;" class="emoji-wave">👋</span>
+    <span style="font-weight: 600; color: #333; font-family: 'Inter', sans-serif;">Bonjour et bienvenue !</span>
+  </div>
+
+  <script>
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        var toast = document.getElementById('welcomeToast');
+        if (toast) {
+          var interval;
+          
+          function initToast() {
+            toast.innerHTML = `
+              <span style="font-size: 22px;" class="emoji-wave">👋</span>
+              <span style="font-weight: 600; color: #333; font-family: 'Inter', sans-serif;">Bonjour et bienvenue !</span>
+            `;
+            toast.classList.remove('expanded');
+            
+            var messages = ["Bonjour et bienvenue !", "مرحباً بكم !"];
+            var emojis = [
+              { char: "👋", cls: "emoji-wave" },
+              { char: "😊", cls: "" },
+              { char: "😊", cls: "emoji-pulse" }
+            ];
+            var i = 0;
+            
+            if (interval) clearInterval(interval);
+            interval = setInterval(function() {
+              var textSpan = toast.querySelector('span:last-child');
+              var emojiSpan = toast.querySelector('span:first-child');
+              if (!textSpan || !emojiSpan) return;
+              
+              i++;
+              textSpan.style.opacity = 0;
+              emojiSpan.style.opacity = 0;
+              setTimeout(function() {
+                textSpan.textContent = messages[i % messages.length];
+                emojiSpan.textContent = emojis[i % emojis.length].char;
+                emojiSpan.className = emojis[i % emojis.length].cls;
+                textSpan.style.opacity = 1;
+                emojiSpan.style.opacity = 1;
+              }, 500);
+            }, 3500);
+          }
+
+          initToast();
+          toast.classList.add('show');
+
+          // Interactive Click Handler
+          toast.addEventListener('click', function() {
+            if (this.classList.contains('expanded')) return;
+            if (interval) clearInterval(interval);
+            this.classList.add('expanded');
+            
+            var isAr = document.documentElement.getAttribute('data-lang') === 'ar';
+            var title = isAr ? "كيف يمكننا مساعدتك؟" : "Comment pouvons-nous vous aider ?";
+            var waText = isAr ? "تواصل معنا عبر واتساب" : "Contactez-nous sur WhatsApp";
+            var emailText = isAr ? "راسلنا عبر البريد الإلكتروني" : "Envoyez-nous un email";
+            
+            this.innerHTML = `
+              <div style="text-align: center; width: 100%;">
+                <p style="margin: 0 0 12px; font-weight: 600; color: #333;">${title}</p>
+                <div class="toast-options">
+                  <a href="https://wa.me/212601633330" target="_blank" class="toast-btn whatsapp">${waText}</a>
+                  <a href="mailto:centreerrahik@gmail.com" class="toast-btn email">${emailText}</a>
+                </div>
+              </div>
+            `;
+          });
+
+          // Hide toast when scrolling down
+          var scrollTimeout;
+          window.addEventListener('scroll', function() {
+            if (window.scrollY > 100 && toast.classList.contains('expanded')) {
+              toast.classList.remove('show');
+              
+              clearTimeout(scrollTimeout);
+              scrollTimeout = setTimeout(function() {
+                initToast();
+                toast.classList.add('show');
+              }, 3000);
+            }
+          });
+        }
+      }, 1500);
+    });
+  </script>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
