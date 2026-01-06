@@ -224,6 +224,85 @@
     .toast-btn:hover { transform: scale(1.02); }
     .toast-btn.whatsapp { background: #25D366; color: white; }
     .toast-btn.email { background: #f3f4f6; color: #333; }
+
+    /* Interactive Before/After Slider */
+    .comparison-slider {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 1rem auto;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      cursor: col-resize;
+      user-select: none;
+      aspect-ratio: 4/3;
+    }
+    .comparison-slider img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      pointer-events: none;
+    }
+    .comparison-slider .img-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .comparison-slider .img-layer.before {
+      width: 50%;
+      z-index: 2;
+      border-right: 2px solid #fff;
+      overflow: hidden;
+    }
+    .comparison-slider .img-layer.after {
+      z-index: 1;
+    }
+    .comparison-slider .handle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      bottom: 0;
+      width: 4px;
+      background: rgba(255,255,255,0.5);
+      z-index: 3;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+    .comparison-slider .handle-circle {
+      width: 40px;
+      height: 40px;
+      background: #D4B996;
+      border: 3px solid #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    .comparison-label {
+      position: absolute;
+      top: 1rem;
+      padding: 4px 12px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 4;
+      pointer-events: none;
+      backdrop-filter: blur(4px);
+    }
+    .comparison-label.before-label { left: 1rem; }
+    .comparison-label.after-label { right: 1rem; }
   </style>
 </head>
 
@@ -768,27 +847,39 @@
       <div class="comparisons">
         <div class="comparison">
           <h3 class="comparison__title" data-i18n="comparison_1_title">Traitement anti-âge</h3>
-          <div class="comparison__images">
-            <div class="comparison__before">
-              <span class="comparison__label">Avant</span>
-              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant.jpg" alt="Avant traitement anti-âge" loading="lazy" />
+          <div class="comparison-slider">
+            <div class="img-layer after">
+              <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres.jpg" alt="Après" loading="lazy">
+              <span class="comparison-label after-label">Après</span>
             </div>
-            <div class="comparison__after">
-              <span class="comparison__label">Après</span>
-              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres.jpg" alt="Après traitement anti-âge" loading="lazy" />
+            <div class="img-layer before">
+              <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant.jpg" alt="Avant" loading="lazy">
+              <span class="comparison-label before-label">Avant</span>
+            </div>
+            <div class="handle">
+              <div class="handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:-8px"><path d="m15 18-6-6 6-6"/></svg>
+              </div>
             </div>
           </div>
         </div>
         <div class="comparison">
           <h3 class="comparison__title" data-i18n="comparison_2_title">Traitement peau</h3>
-          <div class="comparison__images">
-            <div class="comparison__before">
-              <span class="comparison__label">Avant</span>
-              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant%20peau.jpg" alt="Avant traitement peau" loading="lazy" />
+          <div class="comparison-slider">
+            <div class="img-layer after">
+              <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres%20peau.jpg" alt="Après" loading="lazy">
+              <span class="comparison-label after-label">Après</span>
             </div>
-            <div class="comparison__after">
-              <span class="comparison__label">Après</span>
-              <img class="comparison__image" src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/apres%20peau.jpg" alt="Après traitement peau" loading="lazy" />
+            <div class="img-layer before">
+              <img src="https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/avant%20peau.jpg" alt="Avant" loading="lazy">
+              <span class="comparison-label before-label">Avant</span>
+            </div>
+            <div class="handle">
+              <div class="handle-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:-8px"><path d="m15 18-6-6 6-6"/></svg>
+              </div>
             </div>
           </div>
         </div>

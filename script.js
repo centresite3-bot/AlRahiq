@@ -590,6 +590,3 @@ function wireLinks() {
       item.style.cursor = 'pointer';
     });
   }
-
-
-
