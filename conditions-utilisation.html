@@ -21,13 +21,23 @@
 
     gtag('config', 'AW-17858034562');
   </script>
-  <!-- Event snippet for Submit lead form conversion page -->
+  <!-- Event snippet for Submit lead form conversion page
+  In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
   <script>
-    gtag('event', 'conversion', {
-        'send_to': 'AW-17858034562/wTqsCMKnoN4bEIL3r8NC',
-        'value': 1.0,
-        'currency': 'MAD'
-    });
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17858034562/wTqsCMKnoN4bEIL3r8NC',
+          'value': 1.0,
+          'currency': 'MAD',
+          'event_callback': callback
+      });
+      return false;
+    }
   </script>
   <title>Conditions d'Utilisation | Centre Errahik</title>
   <link rel="stylesheet" href="styles.css">
