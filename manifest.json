@@ -12,27 +12,27 @@
   "dir": "ltr",
   "icons": [
     {
-      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.png",
+      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.png",
+      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any maskable"
     },
     {
-      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo-192.png",
+      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg",
       "sizes": "192x192",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     },
     {
-      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo-512.png",
+      "src": "https://raw.githubusercontent.com/centresite3-bot/AlRahiq/refs/heads/main/logo.jpeg",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/jpeg",
       "purpose": "any"
     }
   ],
